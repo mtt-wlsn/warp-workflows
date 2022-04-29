@@ -1,5 +1,5 @@
-# personal-warp-workflows
+# warp-workflows
 
-- warp.dev
+- https://www.warp.dev/
 - https://docs.warp.dev/features/workflows#creating-custom-workflows
 - https://github.com/warpdotdev/workflows
