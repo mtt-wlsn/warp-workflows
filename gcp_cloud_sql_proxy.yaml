@@ -1,0 +1,22 @@
+---
+name: Start the Cloud SQL Proxy for a given GCP Cloud SQL instance.
+command: |-
+    cd ~/
+    CONNECTIONNAME=$(gcloud sql instances describe {{sql_instance_name}} --format='value[](connectionName)')
+    ./cloud_sql_proxy -instances=${CONNECTIONNAME}=tcp:{{port}}
+tags:
+  - GCP
+  - gcloud
+  - cloud_sql_proxy
+description: Connects to the provided GCP Cloud SQL instance using the Cloud SQL Proxy.
+arguments:
+  - name: sql_instance_name
+    description: The name of the SQL instance to which we wish to connect.
+    default_value: ~
+  - name: port
+    description: The port number you wish you use when connecting.
+    default_value: 5432
+source_url: "https://github.com/mtt-wlsn/personal-warp-workflows"
+author: Matt Wilson
+author_url: "https://github.com/mtt-wlsn"
+shells: []
